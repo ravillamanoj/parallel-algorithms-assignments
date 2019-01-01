@@ -1,0 +1,1 @@
+We have indexed based on the name and when we search for particular name we can find the matching names from different departments.

@@ -1,0 +1,44 @@
+/**
+  * Created by manoj on 9/20/2016.
+  */
+import org.apache.spark.{SparkConf, SparkContext}
+object matrixmul {
+
+  System.setProperty("hadoop.home.dir", "D:\\winutils")
+  val sparkConf = new SparkConf().setAppName("SparkMatrixmul").setMaster("local[*]")
+
+  val sc = new SparkContext(sparkConf)
+  val matrix1 = Array.ofDim[Int](2, 2)
+  matrix1(0)(0) = 0
+  matrix1(0)(1) = 1
+  matrix1(1)(0) = 2
+  matrix1(1)(1) = 3
+  val matrix2 = Array.ofDim[Int](2, 2)
+  matrix2(0)(0) = 1
+  matrix2(0)(1) = 2
+  matrix2(1)(0) = 3
+  matrix2(1)(1) = 4
+  for (i <- 0 to 2)
+    for (j <- 0 to 2)
+      for (k <- 0 to 2) {
+        val temp1 = matrix1.map((i, k) => (matrix1, j, matrix1(i)(j)))
+
+      }
+    for (i <- 0 to 2)
+      for (j <- 0 to 2)
+        for (k <- 0 to 2) {
+          val temp2 = matrix2.map((i, k) => (matrix2, j, matrix2(i)(j)))
+
+        }
+
+    val temp3 = temp1.reduceByKey(_ + _)
+    val temp4 = temp3.reduceByKey(_ + _)
+    for (i <- 0 to 2)
+      for (k <- 0 to 2) {
+        val mul = temp3 * temp4
+      }
+    mul.saveAsTextFile("output")
+
+
+
+}

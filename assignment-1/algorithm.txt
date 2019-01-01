@@ -1,0 +1,9 @@
+Start
+import all required libraries
+Indexing and Mapper:
+index(filename,"")
+Map(Intermediate_result,1)
+Reducer:
+redeceByKey(result from mapper)
+output(key,value)
+end

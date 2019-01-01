@@ -1,0 +1,9 @@
+jack,2
+jose,1
+paul,1
+glenn,2
+rose,2
+maxwell,1
+greg,1
+tom,1
+tim,1

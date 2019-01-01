@@ -1,0 +1,1 @@
+This is a Map_reduce program(word count example) using Inverted_indexing technique.  

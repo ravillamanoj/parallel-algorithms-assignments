@@ -1,0 +1,1 @@
+The idea is to find the relation between different persons,that is who likes whom using graphx library.

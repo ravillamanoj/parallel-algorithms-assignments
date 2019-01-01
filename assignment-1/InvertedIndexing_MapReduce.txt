@@ -1,0 +1,19 @@
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
+import org.apache.hadoop.util
+import org.apache.spark.sql.SQLContext
+object mapreduce_invertedindex {
+def main(args: Array[String]) {
+System.setProperty("hadoop.home.dir","D:\\PA\\hadoop-common-2.2.0-bin-master")
+val conf = new SparkConf().setAppName("Mapreduce_invertedindexSpark").setMaster("local[2]").set("spark.executor.memory","8g")
+val sc = new SparkContext(conf)
+def invert_map_reduce(D:\\PA\\input_file: String): Map[String, Vector[String]] = {
+val file = Source.fromFile(D:\\PA\\input_file)
+val lines = file.getLines().toList
+file.close()
+val counts=lines.map(_.split(" ")).flatMap(x => x.drop(1).map(y => (y, x(0)))).groupBy(_._1).map(p => (p._1, p._2.map(_._2).toVector)).reduceByKey(_+_)
+counts.saveAsTextFile("D:\\PA\\wordcount_invertedindex")
+}
+}
+}

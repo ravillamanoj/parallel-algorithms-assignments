@@ -1,0 +1,9 @@
+jack student_list1,student_list2
+jose student_list1
+paul student_list1
+glenn student_list1,student_list3
+rose student_list2,student_list3
+maxwell student_list2
+greg student_list2
+tom student_list3
+tim student_list3
